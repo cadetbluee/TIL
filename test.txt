@@ -2,3 +2,4 @@
 GIT과 GITHUB
 
 github에서 수정됨
+local에서 수정됨
