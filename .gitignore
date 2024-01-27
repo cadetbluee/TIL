@@ -3,6 +3,9 @@
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
+
+a.txt
+
 __pycache__/
 *.py[cod]
 *$py.class
