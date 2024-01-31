@@ -12,11 +12,11 @@ for test_case in range(1, T + 1):
         cnt = 0
         for j in range(N): #0,1,2
             if puzzle[i][j]==1:
-                print(f'puzzle[{i}][{j}]={puzzle[i][j]}')
+                #print(f'puzzle[{i}][{j}]={puzzle[i][j]}')
                 cnt+=1
                 #print(cnt)
         if cnt==K:
-            if j==N:
+            if j==N-1:
                 count+=1
             else:
                 if puzzle[i][j+1]==0:
@@ -26,10 +26,10 @@ for test_case in range(1, T + 1):
         cnt = 0
         for i in range(N):
             if puzzle[i][j] == 1:
-                print(f'puzzle[{i}][{j}]={puzzle[i][j]}')
+                #print(f'puzzle[{i}][{j}]={puzzle[i][j]}')
                 cnt += 1
         if cnt==K:
-            if i == N:
+            if i == N-1:
                 count += 1
             else:
                 if puzzle[i+1][j] == 0:
