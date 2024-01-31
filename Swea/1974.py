@@ -13,6 +13,7 @@ for test_case in range(1, T + 1):
                     cnt+=1
             if cnt>1:
                 result=0
+                break
     for i in range(9):
         for j in range(9):
             cnt=0
@@ -21,19 +22,27 @@ for test_case in range(1, T + 1):
                     cnt+=1
             if cnt>1:
                 result=0
-    N=0
-    M=0
-    for i in range(N,N+2):
-        cnt=0
-        for j in range(M,M+2):
-            for k in range(M,M+2):
-                if arr[i][j]==arr[i][k]:
-                    cnt+=1
-            if M==2 or M==5:
-                M+=3
-        if M==2 or M==5:
-            N+=3
-        if cnt>1:
-            result=0
+                break
+    # for i in range(3):
+    #     for j in range(3):
+    #         cnt_l=[0]*10#검증용
+    #         for m in range(3):
+    #             for n in range(3):
+    #                 cnt_l[arr[m+i*3][n+j*3]]+=1
+    #         for x in cnt_l:
+    #             if x!=1:
+    #                result=0
+    #                break
+    for i in range(3):
+        for j in range(3):
+            cnt_x = [0] * 10
+            for k in range(3):
+                for l in range(3):
+                    cnt_x[arr[3*i+k][3*j+l]] += 1
+
+            for k in range(1, 10):
+                if cnt_x[k] != 1:
+                    result = 0
+                    break
 
     print(f'{test_case} {result}')
