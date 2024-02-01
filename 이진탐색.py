@@ -1,3 +1,4 @@
+#%%
 def binary_search(arr,N,key):
     start = 0 # 구간 초기화
     end = N - 1
