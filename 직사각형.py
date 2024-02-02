@@ -1,12 +1,12 @@
 
-# sq1=list(map(int,input().split()))
-# sq2=list(map(int,input().split()))
-# sq3=list(map(int,input().split()))
-# sq4=list(map(int,input().split()))
-sq1=[1,2,4,4]
-sq2=[2,3,5,7]
-sq3=[3,1,6,5]
-sq4=[7,3,8,6]
+sq1=list(map(int,input().split()))
+sq2=list(map(int,input().split()))
+sq3=list(map(int,input().split()))
+sq4=list(map(int,input().split()))
+# sq1=[1,2,4,4]
+# sq2=[2,3,5,7]
+# sq3=[3,1,6,5]
+# sq4=[7,3,8,6]
 
 square=[[0]*100 for _ in range(100)]
 for i in range(100):
