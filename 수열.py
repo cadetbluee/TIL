@@ -1,20 +1,21 @@
 T=int(input())
 result=list(map(int,input().split()))
-max_c=0
-max_t=1
-min_t=100000
-cnt_m=0
-for i in range(T):
-    if result[i]>=max_t:
-        max_t=result[i]
+max_c=1
+cnt_m=1
+for i in range(1,T):
+    if result[i]>=result[i-1]:
         cnt_m+=1
-cnt_n=0
-for i in range(T):
-    if result[i]<=min_t:
-        min_t=result[i]
+        if cnt_m>max_c:
+            max_c=cnt_m
+    else:
+        cnt_m=1
+cnt_n=1
+for i in range(1,T):
+    if result[i]<=result[i-1]:
         cnt_n+=1
-if cnt_m>cnt_n:
-    max_c=cnt_m
-else:
-    max_c=cnt_n
+        if cnt_n>max_c:
+            max_c=cnt_n
+    else:
+        cnt_n=1
+
 print(max_c)
