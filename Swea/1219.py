@@ -18,7 +18,7 @@ for test_case in range(1, T + 1):
     visited2=[0]*100
 
     while True:
-        if (list_1[i]!=0 and list_2!=0) and (visited1[i]==0 or visited2[i]==0):
+        if (list_1[i]!=0 and list_2[i]!=0) and (visited1[i]==0 or visited2[i]==0):
             if visited1[i]==0:
                 stack.append(i)
                 visited1[i]=1
