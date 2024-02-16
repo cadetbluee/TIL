@@ -27,7 +27,7 @@ for tc in range(1,T+1):
             if arr[i][j] == 2:
                 start=(i,j)  # 시작점 찾기
                 break
-    visited=[[0]*(N) for _ in range(N)]
+    visited=[[1e9]*(N) for _ in range(N)]
     result=0
 
     visited[start[0]][start[1]] = 1
@@ -40,7 +40,7 @@ for tc in range(1,T+1):
             if 0<=ni<N and 0<=nj<N:
                 if (arr[ni][nj]==0 or arr[ni][nj]==3) and visited[ni][nj]==0:
                     Q.append((ni,nj))
-                    visited[ni][nj]=visited[cur[0]][cur[1]]+1
+                    visited[ni][nj]=min(visited[ni][nj],visited[cur[0]][cur[1]]+1)
             if arr[cur[0]][cur[1]] == 3:
                 result=visited[cur[0]][cur[1]]-2
                 Q=[]
