@@ -2,7 +2,6 @@ import sys
 sys.stdin=open("11478_input.txt")
 N_str=input()
 N=len(N_str)
-print(N)
 result=0
 N_sub=set()
 # for i in range(1<<N):

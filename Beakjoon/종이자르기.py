@@ -16,22 +16,35 @@ for i in range(N):
         J_cut.append(j)
 I_cut=sorted(I_cut)
 J_cut=sorted(J_cut)
-if I[1]>0 and J[1]>0:
+
+if len(I_cut)==0:
+    I_cut.append(0)
+if len(J_cut)==0:
+    J_cut.append(0)
     
-    for i in I_cut:
-        if (i-I[0])==max(i-I[0] ,I[1]-i):
-            I=[I[0],i] 
-            
-        else:
-            I=[i,I[1]]
-    for j in J_cut:
-        if j-J[0]==max(j-J[0] ,J[1]-j):
-            J=[J[0],j]
-            J_list.append(J[1]-j)
-        else:
-            J=[j,J[1]]
-            J_list.append(j-J[0])
-else:
-    I,J=(0,0),(0,0)    
-print(I,J)
-print((I[1]-I[0])*(J[1]-J[0]))
+for i in I_cut:
+    # if (i-I[0])==max(i-I[0] ,I[1]-i):
+    #     I=[I[0],i] 
+        
+    # else:
+    #     I=[i,I[1]]
+    if len(I_list)>0:
+        I_list.pop()
+    I_list.append(i-I[0])
+    I_list.append(I[1]-i)
+    I=[i,I[1]]
+    
+for j in J_cut:
+    # if j-J[0]==max(j-J[0] ,J[1]-j):
+    #     J=[J[0],j]
+    #     J_list.append(J[1]-j)
+    # else:
+    #     J=[j,J[1]]
+    #     J_list.append(j-J[0])
+    if len(J_list)>0:
+        J_list.pop()
+    J_list.append(j-J[0])
+    J_list.append(J[1]-j)
+    J=[j,J[1]]   
+print(I_list,J_list)
+print(max(I_list)*max(J_list))
