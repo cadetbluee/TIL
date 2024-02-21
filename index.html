@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    자, 이제 body 사이에다가
+이걸 복사해서 붙여넣고 브라우저에서 확인해보세요.
+
+여기서는 이렇게 줄바꿈도 되어 있고
+이렇게 탭  도 들어가 있고
+이   렇   게 길게 띄어쓴 부분도 있지만
+
+그러면 이렇게 줄바꿈도 되고<br>
+여럿 띄어쓰기도 이&nbsp;&nbsp;&nbsp;렇&nbsp;&nbsp;&nbsp;게 하려면<br><br>
+어떻게 하면 될까요?
+<h1>제목 태그들과 문단 태그</h1>
+<h2>용도에 적합한 태그 사용하기</h2>
+<p>
+  페이지나 섹션, 주요 요소의 제목은 h1 ~ h6 태그를 사용합니다.<br>
+  숫자가 높을수록 낮은 단계의 제목이 되죠.
+</p>
+<p>
+  본문은 문단별로 p 태그로 감쌉니다. p 태그끼리는 자동으로 줄바꿈이 되죠.<br>
+  문단에 관계없이 이처럼<br><br><br>
+  원하는 횟수로 줄바꿈을 하기 위해서는 br 태그를 쓰면 됩니다.<br>
+  br 태그는 열고 닫을 필요가 없는 몇 안 되는 태그 중 하나인데 남용하지 않는 것이 좋습니다.
+</p>
+<hr>
+<p>
+  위와 같이 hr 태그를 사용하면 가로줄을 표시할 수도 있습니다.<br><br>
+  이&nbsp;&nbsp;&nbsp;렇&nbsp;&nbsp;&nbsp;게 글자 사이의 공백을 여럿 두려면 & n b s p ; 를 붙여서 입력하세요.
+</p>
+<p>
+  마지막으로, 여기서는 보이지 않지만 페이지 원본 보기에서 주석을 확인할 수 있습니다.
+</p>
+
+<!-- 이 부분은 웹페이지에서는 보이지 않았을거에요. -->
+
+<!-- 이처럼, 코드에서만 볼 수 있는 텍스트를
+'주석'이라고 합니다. 위의 주석처럼 한 줄로도,
+주석 여러줄 작성.-->
+
+<h1>강조하기 위한 태그들</h1>
+<h2>b 태그 vs. strong 태그</h2>
+<p>
+    <b>이 요소</b>와 <strong>이 요소</strong>는 같아 보이지만 다른 태그입니다. <br>
+    b 태그는 글자를 굵게만 만들지만, strong 태그는 그 내용이 중요하다는 의미 또한 담고 있죠. <br>
+    이들이 굵게 보이는 것 또한 브라우저의 기본 설정일 뿐, <br>
+    이러한 디자인 요소는 CSS로 지정해주어야 합니다.
+</p>
+
+<h2>i 태그 vs. em 태그</h2>
+<p>
+    <i>이 요소</i>와 <em>이 요소</em> 역시 같아 보이지만 다른 태그입니다. <br>
+    둘 다 글자를 기울이지만, i 태그와 달리 em 태그는 강조하는 역할을 합니다. <br>
+    글자의 기울임 역시 CSS로 명시해주는것이 좋습니다. <br><br>
+	<strong>경고!</strong> 이것은 매우 위험합니다. <br><br>
+	나는 <em>당근</em>을 사랑합니다. <br>
+	나는 당근을 <em>사랑</em>합니다.
+    <h1>첨자 태그</h1>
+    <h2>위 첨자 태그</h2>
+    <p>
+      1<sup>st</sup>, 2<sup>nd</sup>... n<sup>th</sup>, x<sup>n</sup>
+      등 지수나 서수를 위한 위 첨자를 표시할 때는 <br>
+      <strong>sup</strong> 태그를 사용합니다.
+    </p>
+    <h2>아래 첨자 태그</h2>
+      Yalco<sub>1</sub>, H<sub>2</sub>O, x<sub>n</sub>
+      등 각주, 변수, 화학식을 위한 아래 첨자를 표시할 때는 <br>
+      <strong>sub</strong> 태그를 사용합니다.
+    <p>
+        <h1>(구)밑줄 태그와 취소선 태그</h1>
+  <p>
+    <strong>u</strong> 태그는 과거 <s>밑줄을 긋는 용도</s>로 사용되었으나 <br>
+    현재는 <em>CSS 효과와 함께</em> 철자 오류 등을 강조하는 용도로 <u>사용됍니다.</u> <br>
+    <strong>s</strong> 태그는 더 이상 유효하지 않은 정보를 취소선과 함께 나타내죠.
+  </p>
+  <!-- 사용자로부터 인풋값 받기 -->
+  <form>
+    <fieldset>
+      <legend>반장</legend>
+
+      <label for="name_1">이름</label>
+      <input id="name_1" name="name_1" type="text">
+      <br><br>
+
+      <label for="age_2">나이</label>
+      <input id="age_1" name="age_1" type="number">
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>부반장</legend>
+
+      <label for="name_2">이름</label>
+      <input id="name_2" name="name_2" type="text">
+      <br><br>
+
+      <label for="age_2">나이</label>
+      <input id="age_2" name="age_2" type="number">
+
+    </fieldset>
+    <br>
+
+    <fieldset disabled>
+      <legend>서기</legend>
+
+      <label for="name_3">이름</label>
+      <input id="name_3" name="name_3" type="text">
+      <br><br>
+
+      <label for="age_3">나이</label>
+      <input id="age_3" name="age_3" type="number">
+    </fieldset>
+  </form>
+ 
+  <h1>숫자 관련 인풋 타입</h1>
+
+  <form action="#">
+    <label for="numIp">number</label> <br>
+    <input 
+      id="numIp"
+      type="number"
+      min="0"
+      max="10"
+    >
+    <br><br>
+
+    <label for="rgIp">range</label> <br>
+    <input
+      id="rgIp"
+      type="range"
+      min="0"
+      max="100"
+      step="20"
+    >
+    <br><br>
+
+    <label for="dtIp">date</label> <br>
+    <input
+      id="dtIp"
+      type="date"
+      min="2020-01-01"
+      max="2030-12-31"
+    >
+    <br><br>
+    
+  <h1>체크 관련 인풋 타입</h1>
+
+  <form action="#">
+    <h2>checkbox</h2>
+    <input 
+      id="cbIp"
+      type="checkbox"
+      checked
+    >
+    <label for="cbIp">유기농</label> <br>
+
+    <h2>radio</h2>
+    <input
+      type="radio"
+      name="fruit"
+      id="f_apple"
+      value="apple"
+      checked
+    >
+    <label for="f_apple">사과</label>
+    <input
+      type="radio"
+      name="fruit"
+      id="f_grape"
+      value="grape"
+    >
+    <label for="f_grape">포도</label>
+    <input
+      type="radio"
+      name="fruit"
+      id="f_orange"
+      value="orange"
+    >
+    <label for="f_orange">오렌지</label>
+    <br>
+
+    <input
+      type="radio"
+      name="vege"
+      id="v_carrot"
+      value="carrot"
+      checked
+    >
+    <label for="v_carrot">당근</label>
+    <input
+      type="radio"
+      name="vege"
+      id="v_tomato"
+      value="tomato"
+    >
+    <label for="v_tomato">토마토</label>
+    <input
+      type="radio"
+      name="vege"
+      id="v_eggplant"
+      value="eggplant"
+    >
+    <label for="v_eggplant">가지</label>
+
+  </form>
+</body>
+</html>
