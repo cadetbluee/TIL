@@ -20,19 +20,32 @@ for _ in range(T):
     for i in range(N-1):
         p,c=map(int,(input().strip()).split())
         par[c]=p
+    
     node1,node2=map(int,(input().strip()).split())
     c=node1
-    node1_lst=set()
+    node1_lst=[c]
     while par[c]!=0:
-        node1_lst.add(c)
+     
         c=par[c] #부모를 새로운 자식으로 두고
+        node1_lst.append(c)
     c=node2
-    node2_lst=set()
-    
+    node2_lst=[c]
     while par[c]!=0:
-        node2_lst.add(c)
-        c=par[c] #부모를 새로운 자식으로 두고
         
-    print(min(node1_lst&node2_lst))
+        c=par[c] #부모를 새로운 자식으로 두고
+        node2_lst.append(c)
+    
+    result=[]
+    for i in node1_lst:
+        for j in node2_lst:
+            if i==j:
+                result.append(i)
+                break
+        if len(result)>0:
+            break
+    print(*result)
+    
+    
+    
     
     # pre_order(root,node1,node2)
