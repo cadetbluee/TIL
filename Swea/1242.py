@@ -4,7 +4,7 @@ T=int(input())
 for tc in range(1,T+1):
     N,M=map(int,input().split())
     arr=list(set(input().strip() for _ in range(N)))
-    code=[[2,1,1],[2,2,1],[1,2,2],[4,1,1],[1,3,2],[2,3,1],[1,1,4],[3,1,2],[2,1,3],[1,1,2]]
+    code=['211','221','122','411','132','231','114','312','213','112']
     b_code = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100',
             '1101', '1110', '1111']
     x_code = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -33,38 +33,34 @@ for tc in range(1,T+1):
                 cnt1+=1
         if cnt1>0:temp.append(cnt1)
         arr[i]=temp
-    re=[]
-    if tc == 13: print(arr)
+    re=set()
+    
     while len(arr)>0:
         temp=arr.pop()
         if temp not in arr:
             ans=[]
             for j in range(0,len(temp),4):
                 x=min(temp[j+1],temp[j+2],temp[j+3])
-                if [temp[j+1]/x,temp[j+2]/x,temp[j+3]/x] in code:
-                    num=code.index([temp[j+1]/x,temp[j+2]/x,temp[j+3]/x])
+                # if tc==1:print(str(int(temp[j+1]/x))+str(int(temp[j+2]/x))+str(int(temp[j+3]/x)))
+                if str(int(temp[j+1]/x))+str(int(temp[j+2]/x))+str(int(temp[j+3]/x)) in code:
+                    num=code.index(str(int(temp[j+1]/x))+str(int(temp[j+2]/x))+str(int(temp[j+3]/x)))
                     ans.append(num)
-                else:
-                    ans.append(0)
-                ans.append(x)
-
-            while len(ans)>=16:
-
-                re.append(ans[:16])
-                ans=ans[17:]
-
-    while len(re)>0:
-        temp=re.pop()
-
-        if temp not in re:
-            even, odd = 0, 0
-            for k in range(0,16,2):
-                if k % 4 == 0:
-                    odd += temp[k]
-                else:
-                    even += temp[k]
-            if (odd * 3 + even) % 10 == 0:
-                result += odd + even
+                    # if tc==1:print(num)
+            
+            for i in range(0, len(ans), 8) : #8개씩 잘라서 넣기
+                re.add(tuple(ans[i:i+8]))
+    # if tc==1:print(re)
+    for temp in re:
+        even, odd = 0, 0
+        for k in range(8):
+            if k % 2 == 0:
+                odd += temp[k]
+            else:
+                even += temp[k]
+        if (odd * 3 + even) % 10 == 0:
+            result += odd + even
+     
+    print(f'#{tc}',result)
     # codes=set()
     # arr=list(arr)
     # N=len(arr)
@@ -148,4 +144,4 @@ for tc in range(1,T+1):
     #
     #     if (odd*3+even)%10==0:
     #         result+=(odd+even)
-    print(f'#{tc}',result)
+   
