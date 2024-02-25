@@ -28,4 +28,4 @@ for tc in range(1,T+1):
     visit=[False]*N
     cnt=0
     recur8(0,N)
-    print(f'{tc} {cnt}')
+    print(f'#{tc} {cnt}')
