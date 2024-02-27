@@ -50,8 +50,8 @@
 # min_re=1e9
 # max_num(0,N,A[0])
 # min_num(0,N,A[0])
-# print(max_re)
-# print(min_re)
+# print(int(max_re))
+# print(int(min_re))
 def max_min_num(i, N, s, max_dp, min_dp, max_re, min_re):
     if i == N - 1:
         if max_re < s:
@@ -89,6 +89,7 @@ max_dp = [[-1] * (N + 1) for _ in range(N + 1)]
 min_dp = [[-1] * (N + 1) for _ in range(N + 1)]
 
 max_result, min_result = max_min_num(0, N, A[0], max_dp, min_dp, max_re, min_re)
-print(max_result)
-print(min_result)
+print(int(max_re))
+print(int(min_re))
 
+#똑똑이 채영이! B 형 따 자 !
