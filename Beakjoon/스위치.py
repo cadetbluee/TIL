@@ -22,10 +22,5 @@ for gender, num in students:
             switches[right] = 1 - switches[right]
             left -= 1
             right += 1
-if N>20:
-    for i in range(N):
-        print(switches[i],end=' ')
-        if (i+1)%20==0 and i+1!=N:
-            print()
-else:
-    for i in switches:print(i,end=' ')
+for i in range(0,N,20):
+    print(*switches[i:i+20])
