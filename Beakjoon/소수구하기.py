@@ -26,3 +26,20 @@ print(cnt)
 #     if is_prime(i+M)==True:
 #         print(i+M)
 #     i+=1S
+N=int(input())
+arr=[]
+for i in range(N):
+    if is_prime(i):
+        arr.append(i)
+sum_prime=0
+cnt=0
+for start in range(0,N-1):
+    end=1
+    s=sum(arr[start:end])
+    while end!=N:
+        
+        if s+arr[end]==N:
+            cnt+=1
+        end+=1
+    
+print(cnt)
