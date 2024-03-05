@@ -24,9 +24,9 @@ for i in range(1,1+N):
     node,leftn,rightn=input().split()
     tree[i]=node
     if leftn!='.':
-        left[i]=leftn
+        left[i]=(leftn,i)
     if rightn!='.':
-        right[i]=rightn
+        right[i]=(rightn,i)
 
 pre_order('A')
 print()
