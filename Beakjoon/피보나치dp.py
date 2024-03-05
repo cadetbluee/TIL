@@ -1,4 +1,4 @@
-n=int(input())
+# n=int(input())
 
 def fib_dp(n):
     
@@ -9,4 +9,6 @@ def fib_dp(n):
         f[i]=f[i-1]+f[i-2]
     return f[n]
 
-print(fib_dp(n),n-2)
+#print(fib_dp(n),n-2)
+n,k=map(int,input().split())
+print(fib_dp(n)/(fib_dp(n-k)*fib_dp(k)))
