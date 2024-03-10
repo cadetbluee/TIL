@@ -19,9 +19,6 @@ jQuery(document).ready(function () {
       .appendTo(".imgslide");
   }, 3000);
 
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-    var target = $(e.target).attr("href"); // activated tab
-  });
   $(".notice li:first").click(function () {
     $("#modal").addClass("active");
   });

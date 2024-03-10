@@ -20,12 +20,16 @@
         color: white;
         background-color: rgba(0, 0, 0, 0.567);
         position: absolute;
-        margin-left: 500px;
+
         font-size: 30px;
         font-weight: bold;
       }
       footer {
         height: 100px;
+      }
+      .notice li:nth-child(2n) {
+        /*공지사항 중 2배수 리스트 스타일*/
+        background-color: #cccccc;
       }
     </style>
     <script src="jquery-1.12.3.js"></script>
@@ -35,6 +39,10 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
     />
   </head>
   <body>
@@ -120,37 +128,106 @@
     <main>
       <div
         id="carouselExampleSlidesOnly"
-        class="carousel slide"
+        class="carousel slide carousel-fade"
         data-bs-ride="carousel"
         data-bs-interval="3000"
       >
         <div class="carousel-inner">
           <div class="carousel-item active" style="position: relative">
-            <p style="margin-top: 150px">대한천문대 홈페이지 새단장</p>
+            <p style="margin-top: 150px; margin-left: 500px">
+              대한천문대 홈페이지 새단장
+            </p>
             <img src="[Slide]/img1.jpg" class="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item" style="position: relative">
-            <p style="margin-top: 150px">이달의 별자리 특강</p>
+            <p style="margin-top: 150px; margin-left: 500px">
+              이달의 별자리 특강
+            </p>
             <img src="[Slide]/img2.jpg" class="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item" style="position: relative">
-            <p style="margin-top: 150px">별사진 공모전 개회</p>
+            <p style="margin-top: 150px; margin-left: 500px">
+              별사진 공모전 개회
+            </p>
             <img src="[Slide]/img3.jpg" class="d-block w-100" alt="..." />
           </div>
         </div>
       </div>
-      <link
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        rel="stylesheet"
-      />
-      <article style="display: flex; height: 200px">
-        <ul id="myTab" class="nav nav-tabs">
-          <li class="active"><a href="#home" data-toggle="tab">공지사항</a></li>
-          <li class=""><a href="#profile" data-toggle="tab">갤러리</a></li>
+
+      <article style="display: flex; height: 200px; position: relative">
+        <ul id="myTab" class="nav nav-tabs" style="width: 33.3%; height: 45px">
+          <li class="active" style="height: 45px">
+            <a href="#home" data-toggle="tab">공지사항</a>
+          </li>
+          <li class="" style="height: 45px">
+            <a href="#profile" data-toggle="tab">갤러리</a>
+          </li>
         </ul>
-        <div id="myTabContent" class="tab-content">
-          <div class="tab-pane fade active in" id="home">home tab!</div>
-          <div class="tab-pane fade" id="profile">profile tab!</div>
+        <div
+          id="myTabContent"
+          class="tab-content"
+          style="position: absolute; margin-top: 5%; margin-left: 5px"
+        >
+          <div class="tab-pane fade active in" id="home">
+            <div class="notice" style="text-align: start; line-height: 2.5">
+              <ul class="list-unstyled">
+                <li>
+                  제1회 별사진 공모전 개회됩니다.<span style="margin-left: 90px"
+                    >2020.03.01</span
+                  >
+                </li>
+                <li>
+                  하계기간 야간 연장운영합니다.<span style="float: right"
+                    >2020.03.01</span
+                  >
+                </li>
+                <li>
+                  청소년 대상 천문교실 안내<span style="float: right"
+                    >2020.03.01</span
+                  >
+                </li>
+                <li>
+                  하늘과 바람과 별과 詩 사생대회<span style="float: right"
+                    >2020.03.01</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile">
+            <div
+              class="row row-cols- row-cols-md-3 g-5"
+              style="margin-left: 10px"
+            >
+              <div class="col">
+                <div class="card h-50">
+                  <img
+                    src="Contents/gallery 이미지/icon1.jpg"
+                    class="card-img-top"
+                    alt="stargazing"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img
+                    src="Contents/gallery 이미지/icon2.jpg"
+                    class="card-img-top"
+                    alt="telescope"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img
+                    src="Contents/gallery 이미지/icon3.jpg"
+                    class="card-img-top"
+                    alt="holding a star"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="card text-bg-dark" style="width: 33.3%">
@@ -288,5 +365,12 @@
         </div>
       </div>
     </div>
+    <script>
+      $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+        var target = $(e.target).attr("href"); // activated tab
+      });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
