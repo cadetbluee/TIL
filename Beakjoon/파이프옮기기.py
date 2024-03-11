@@ -1,7 +1,7 @@
 
 sys.stdin=open('./17070_input.txt')
 import sys
-from collections import deque
+
 input=sys.stdin.readline
 N=int(input())
 arr=[list(map(int,input().split())) for _ in range(N)]
@@ -11,13 +11,13 @@ dir3=[(0,1),(1,0)]
 dird=[(0,1),(1,0),(1,1)]
 start=[(0,0),(0,1)]
 cnt=0
-Q=deque()
+Q=[]
 Q.append(start)
 if arr[N-1][N-1]==1:
     print(0)
 else:
     while Q:
-        temp=Q.popleft()
+        temp=Q.pop()
         s=temp[0]
         e=temp[1]
         cntd=0
