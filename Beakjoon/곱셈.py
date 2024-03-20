@@ -12,7 +12,7 @@ elif A<C:
         A*=A
         rest=A%C
         rests.append(rest)
-        print(rests)
+        
     if B<len(rests):
         print(rests[B-1])
     elif B%(len(rests)-end)==0:
@@ -27,7 +27,7 @@ else:
         A*=A
         rest=A%C
         rests.append(rest)
-        print(rests)
+        
     if B<len(rests):
         print(rests[B-1])
     elif B%(len(rests)-end)==0:
