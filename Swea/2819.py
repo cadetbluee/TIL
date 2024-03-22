@@ -22,3 +22,20 @@ for tc in range(1,T+1):
         for j in range(4):
             recur(i,j,'',0)
     print(f'#{tc}',len(ans))
+
+#강사님 풀이
+
+def dfs(y,x,cnt,path):
+    #기저조건: 7자리면 끝
+    if cnt==7:
+        result.add(path)
+        return
+
+
+T=int(input())
+for tc in range(1,T+1):
+    maps=[list(map(int,input().split())) for _ in range(4)]
+    result=set()
+    for i in range(4):
+        for j in range(4):
+            dfs(i,j,)
