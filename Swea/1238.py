@@ -36,3 +36,37 @@ for tc in range(1,T+1):
             max_idx=i
             break
     print(f'#{tc}',max_idx)
+
+#강사님 풀이
+# def bfs(start):
+#     q=[start]
+#     visited=[0]*101
+#     visited[start]=1
+#     #가장 깊은 depth의 가장 큰수
+#     max_number=start
+#     #가장 깊은 depth저장
+#     max_depth=1
+#     while q:
+#         now=q.pop(0)
+#         for to in graph[now]:
+#             if visited[to]:
+#                 continue
+#             #depth가 더 깊어졌네
+#             #현재 방문 = 이전 방문 +1 번만에 왔다
+#             visited[to]=visited[now]+1
+#             if max_depth<visited[to] or \
+#                     (max_depth==visited[to] and max_number<to):
+#                 max_depth=visited[to]
+#                 max_number=to
+#             q.append(to)
+#         return max_number
+# for tc in range(1,11):
+#     N,start=map(int,input().split())
+#     input_graph=list(map(int,input().split()))
+#     graph=[[] for _ in range(101)]
+#     for i in range(0,N,2):
+#         s=input_graph[i]
+#         e=input_graph[i+1]
+#         graph[s].append(e)
+#     r=bfs(start)
+#     print(f'#{tc} {r}')
