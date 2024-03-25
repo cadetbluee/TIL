@@ -26,10 +26,9 @@ for i in range(1,1+N):
 
     tree[node][0]=leftn
     tree[node][1]=rightn
-print(tree)
+
 pre_order('A')
 print()
 in_order('A')
 print()
 post_order('A')
-print()
