@@ -22,30 +22,6 @@ def result(arr):
  
     return number
 
-def first_cal(f_li):
-    arr = []
-    i = 0
- 
-    while i < len(num_str):
- 
-        if i in f_li:
-            a = arr.pop()
-            if num_str[i] == '+':
-                num = int(a) + int(num_str[i + 1])
-                arr.append(str(num))
-                i += 2
-            elif num_str[i] == '*':
-                num = int(a) * int(num_str[i + 1])
-                arr.append(str(num))
-                i += 2
-            elif num_str[i] == '-':
-                num = int(a) - int(num_str[i + 1])
-                arr.append(str(num))
-                i += 2
-        else:
-            arr.append(num_str[i])
-            i += 1
-    return result(arr)
  
  
 def calculate(x):
@@ -80,8 +56,7 @@ def calculate(x):
  
     if x == N:
         return
- 
-    # 연산자만 탐색, 선택된 연산자 인덱스를 넣어줌
+
     for i in range(x, N, 2):
  
         if visit[i] == 1:

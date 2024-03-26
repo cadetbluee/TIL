@@ -19,7 +19,8 @@ for tc in range(1,T+1):
             for d in dirs[arr[i][j]-1]:
                 ni=d[0]+i
                 nj=d[1]+j
-                if 0<=ni<N and 0<=nj<M and arr[ni][nj]!=0:
+                if 0<=ni<N and 0<=nj<M:
+                    
                     visited[ni][nj]=1
                     new_Q.append((ni,nj))
         Q.extend(new_Q)
