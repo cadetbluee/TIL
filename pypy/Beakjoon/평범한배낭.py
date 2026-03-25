@@ -1,22 +1,15 @@
 import sys
 
-input= sys.stdin.readline
+sys.stdin=open('12865_input.txt')
 
-def dfs(i,weight,value):
-    global max_value
-    if i==N:
-        if weight<=K:
-            max_value=max(max_value,value)
-        return
-    if weight>K:
-        return
-    if 
-    dfs(i+1,weight+arr[i][0],value+arr[i][1])
-    dfs(i+1,weight,value)
 
 N,K=map(int,input().split())
-idx=[0]*N
-arr=[list(map(int,input().split())) for _ in range(N)]
+
+goods=[tuple(map(int,input().split())) for _ in range(N)]
 max_value=0
-dfs(0,0,0)
-print(max_value)
+dp=[0]*(K+1)
+for weight,value in goods:
+    for i in range(K,weight-1,-1):
+        dp[i]=max(dp[i],dp[i-weight]+value)
+
+print(dp)
